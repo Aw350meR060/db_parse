@@ -1,5 +1,4 @@
-from convertion_data.ram_data import Domain, Table, Field, Index, Item, Constraint, Schema
-
+from ram_data import Schema, Domain, Table, Constraint, Field, Index, Item
 
 def xml_to_ram(xml):
     schema = Schema()
@@ -19,7 +18,6 @@ def xml_to_ram(xml):
         schema.tables = _getTables(xml)
 
     return schema
-
 
 def _getDomains(xml):
     domains = []
