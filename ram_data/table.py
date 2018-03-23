@@ -12,4 +12,4 @@ class Table():
         #end_props
         self.fields = []
         self.constraints = []
-        self.indexes = []
+        self.indices = []

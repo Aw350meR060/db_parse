@@ -108,7 +108,7 @@ def _createTableNode(xml, table, node=None):
         node.appendChild(constraint)
 
     createIndex = functools.partial(_createIndexNode, xml)
-    for index in map(createIndex, table.indexes):
+    for index in map(createIndex, table.indices):
         node.appendChild(index)
 
     return node

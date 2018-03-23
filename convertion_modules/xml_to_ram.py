@@ -93,7 +93,7 @@ def _getTables(xml):
 
         tmp.fields = _getFields(table)
         tmp.constraints = _getConstraints(table)
-        tmp.indexes = _getIndexes(table)
+        tmp.indices = _getIndexes(table)
         tables.append(tmp)
     return tables
 
