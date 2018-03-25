@@ -23,7 +23,6 @@ def _getDomains(xml):
     domains = []
     for domain in xml.getElementsByTagName("domain"):
         tmp = Domain()
-        tmpDomain = Domain()
 
         for attributeName, attributeValue in domain.attributes.items():
             if attributeName.lower() == "name":
@@ -182,7 +181,6 @@ def _getIndexes(xml):
         else:
             item = Item()
             item.name = index.getAttribute("field")
-            item.position = 0
             tmp.fields.append(item)
         for attributeName, attributeValue in index.attributes.items():
             if attributeName.lower() == "field":

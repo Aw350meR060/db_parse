@@ -57,12 +57,16 @@ def ram_to_dbd(schema):
                                 description = :desc,
                                 can_add = :can_add,
                                 can_edit = :can_edit,
-                                can_delete = :can_delete
+                                can_delete = :can_delete,
+                                temporal_mode = :access,
+                                means = :ht
                                 WHERE name=:name""",
                     {"desc": table.description,
                      "can_add": table.add,
                      "can_edit": table.edit,
                      "can_delete": table.delete,
+                     "access": table.access_level,
+                     "ht": table.ht_table_flags,
                      "name": table.name})
 
         cur.execute(""" UPDATE dbd$tables 
@@ -164,7 +168,7 @@ def ram_to_dbd(schema):
 
             pos_i +=1
 
-    ##Обработка ограничений
+    #Обработка ограничений
 
     for table in schema.tables:
         pos_c=0
@@ -226,4 +230,5 @@ def ram_to_dbd(schema):
                             WHERE reference = -1""",
                         {"ref": constraint.reference})
 
-
+    conn.commit()
+    conn.close

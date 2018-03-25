@@ -1,3 +1,4 @@
 from convertion_modules.xml_to_ram import xml_to_ram
 from convertion_modules.ram_to_xml import ram_to_xml
 from convertion_modules.ram_to_dbd import ram_to_dbd
+from convertion_modules.dbd_to_ram import dbd_to_ram
