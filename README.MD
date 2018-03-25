@@ -1,12 +1,32 @@
-Структура проекта
 
-/ram_data/*.py - модули, содержашие в себе описания структуры базы данных(схемы, доменов, таблиц и т.д.)
-/convertion_modules/minidom_fixed.py - исправленая библиотека minidom для корректного экспорта в xml-формат
-/convertion_modules/ram_to_xml.py - конвертирует ram-представление в xml-файл
-/convertion_modules/xml_to_ram.py - конвертирует содержимое xml-файла в ram-представление
-/convertion_modules/ram_to_dbd.py - конвертирует ram-представление в db-файл
-/convertion_modules/dbd_to_ram.py - конвертирует db-файл в ram-представление
-/main.py - главный модуль, последовательно вызывающий модули конвертации
-/tasks.xml - ресурс-файл, конвертируется в ram
-/result.xml - результирующий xml-файл, генерируется из созданного ram_to_xml.py документа minidom
-/result.db - результирующий db-файл, генерируется с помощью ram_to_dbd.py
+# Database parses
+
+A collection of various database parsers for a student project by Evgeny Sorokin.
+
+## Project Structure
+
+```
+xml_db_parse
+  │   generate_db.py - empty postgresql database generator
+  │   dbd2xml.py - loads a database from sqlite and writes its contents to a xdb file
+  │   xml2dbd.py - parses data from a xml/xdb-file and creates a sqlite database
+  │
+  ├───convertion_modules
+  │       dbd_struct.py         - script for creating the database structure
+  │       dbd_to_ram.py         - converts a sqlite database into ram-data
+  │       minidom_fixed.py      - an xdb-converting util
+  │       ram_to_dbd.py         - converts ram-data into a sqlite database
+  │       ram_to_xml.py         - converts ram-data into a xdb-file
+  │       xml_to_ram.py         - converts a xml/xdb-file into ram-data
+  │
+  ├───ram_data
+  │       *.py   - python classes, containing database structure in ram-data
+  │
+  ├───result_files
+  │       result.db             - result db-file
+  │       result.xdb            - result xdb-file
+  │
+  └────source_files
+          prjadm.xdb            - source xdb-file
+          tasks.xml             - source xml-file
+```

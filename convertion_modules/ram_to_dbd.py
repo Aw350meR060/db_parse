@@ -2,8 +2,8 @@ import sqlite3
 import uuid1
 import convertion_modules.dbd_struct as script
 
-def ram_to_dbd(schema):
-    conn = sqlite3.connect("result.db")
+def ram_to_dbd(schema,db_path):
+    conn = sqlite3.connect(db_path)
     cur = conn.cursor()
 
     cur.executescript(script.SQL_DBD_Init)
