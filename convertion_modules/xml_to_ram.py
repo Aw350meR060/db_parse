@@ -92,7 +92,7 @@ def _getTables(xml):
 
         tmp.fields = _getFields(table)
         tmp.constraints = _getConstraints(table)
-        tmp.indices = _getIndexes(table)
+        tmp.indices = _getIndices(table)
         tables.append(tmp)
     return tables
 
@@ -168,7 +168,7 @@ def _getConstraints(xml):
         constraints.append(tmp)
     return constraints
 
-def _getIndexes(xml):
+def _getIndices(xml):
     if xml.nodeName != "table":
         raise ValueError("Is not a table")
 
@@ -181,7 +181,7 @@ def _getIndexes(xml):
         else:
             item = Item()
             item.name = index.getAttribute("field")
-            tmp.fields.append(item)
+            tmp.fields.append(item.name)
         for attributeName, attributeValue in index.attributes.items():
             if attributeName.lower() == "field":
                 pass

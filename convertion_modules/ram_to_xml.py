@@ -74,7 +74,6 @@ def _createDomainNode(xml, domain, node = None):
 
     return node
 
-
 def _createTableNode(xml, table, node=None):
     if node is None:
         node = xml.createElement("table")
@@ -113,7 +112,6 @@ def _createTableNode(xml, table, node=None):
 
     return node
 
-
 def _createFieldNode(xml, field, node=None):
     if node is None:
         node = xml.createElement("field")
@@ -147,7 +145,6 @@ def _createFieldNode(xml, field, node=None):
 
     return node
 
-
 def _createConstraintNode(xml, constraint):
     node = xml.createElement("constraint")
 
@@ -179,12 +176,11 @@ def _createConstraintNode(xml, constraint):
 
     return node
 
-
 def _createIndexNode(xml, index):
     if index.fields != []:
         node = xml.createElement("index")
         if len(index.fields) == 1:
-            node.setAttribute("field",index.fields[0].name)
+            node.setAttribute("field",index.fields[0])
         else:
             createItem = functools(_createItem, xml)
             for item in map(createItem, index.fields):

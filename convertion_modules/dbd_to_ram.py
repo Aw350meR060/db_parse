@@ -168,7 +168,7 @@ def _getDbIndices(cur, table_id):
         tmp = Index()
 
         for item in  _getDbIndexDetails(cur,index[0]):
-            tmp.fields.append(item)
+            tmp.fields.append(item.name)
 
         if index[2] != None:
             tmp.name = str(index[2])
