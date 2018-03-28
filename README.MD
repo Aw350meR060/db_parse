@@ -7,8 +7,9 @@ A collection of various database parsers for a student project by Evgeny Sorokin
 
 ```
 xml_db_parse
-  │   generate_db.py - empty postgresql database generator
   │   dbd2xml.py - loads a database from sqlite and writes its contents to a xdb file
+  │   generate_db.py - empty postgresql database generator
+  │   main.py - calls up the tasked modules  
   │   xml2dbd.py - parses data from a xml/xdb-file and creates a sqlite database
   │
   ├───convertion_modules
