@@ -8,8 +8,7 @@ dbd_r = "result_files/result.db"
 xdb_r = "result_files/result.xdb"
 pg_name = "db_metadata"
 
-tasks = md.parse(xdb_s)
-xdb2dbd.parse(tasks,dbd_r)
+xdb2dbd.parse(xdb_s,dbd_r)
 
 dbd2xdb.parse(dbd_r,xdb_r)
 

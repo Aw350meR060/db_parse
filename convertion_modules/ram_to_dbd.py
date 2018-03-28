@@ -154,7 +154,7 @@ def ram_to_dbd(schema,db_path):
                                 SELECT id from dbd$fields as field
                                 WHERE field.name = :field_n) 
                                 WHERE field_id = -1""",
-                                {"field_n": item.name})
+                                {"field_n": item})
                 if len(index.fields) != 1:
                     cur.execute(""" UPDATE dbd$index_details SET
                                     expression = :exp,
